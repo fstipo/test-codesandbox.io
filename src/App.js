@@ -12,15 +12,21 @@ export default function App() {
   }
   useEffect(function () {
     getAdvice();
-  }, []);
+  },[]);
 
   return (
     <div>
       <h1>{advice}</h1>
       <button onClick={getAdvice}>Advice</button>
-      <p>
-        You get the advice <strong>{count}</strong> times.
-      </p>
+      <Message count={count} />
     </div>
+  );
+}
+
+function Message(prop) {
+  return (
+    <p>
+      You get the advice <strong>{prop.count}</strong> times.
+    </p>
   );
 }
